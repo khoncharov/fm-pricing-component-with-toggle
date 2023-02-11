@@ -66,7 +66,7 @@
 
 #toggle-state-1:checked:focus-visible ~ .toggle > #toggle-state-1-label,
 #toggle-state-2:checked:focus-visible ~ .toggle > #toggle-state-2-label {
-  outline: 2px dotted hsl(271.3, 68.5%, 32.4%);
+  outline: 2px dashed hsl(271.3, 68.5%, 32.4%);
   outline-offset: 3px;
 }
 
@@ -86,7 +86,7 @@
 }
 
 .card {
-  padding-inline: 3.1rem;
+  padding-inline: 3rem;
   width: 32.7rem;
   border-radius: 1rem;
   background: linear-gradient($lg-1, $lg-2);
@@ -95,6 +95,7 @@
   justify-content: center;
   box-shadow: 0 8px 17px rgba($light-grayish-blue, 0.4);
   z-index: 1;
+  --price-color: hsl(232, 13%, 33%);
 
   @include screen("desktop") {
     box-shadow: 0 20px 37px rgba($light-grayish-blue, 0.4);
@@ -102,11 +103,107 @@
     grid-row: 1 / 4;
     grid-column: 2 / 3;
   }
+
+  &__title {
+    height: 2.6rem;
+    font-size: 1.8rem;
+    padding-top: 0.6rem;
+    text-align: center;
+  }
+
+  &__details {
+    height: 36.5rem;
+    display: grid;
+    grid-template-rows: 13.1rem 5.3rem 5.3rem 5.3rem 1fr;
+  }
+
+  &__price {
+    display: none;
+    padding-bottom: 0.6rem;
+    justify-content: center;
+    font-size: 7.2rem;
+    letter-spacing: -0.24rem;
+    line-height: 1;
+    color: var(--price-color);
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  &__price::before {
+    content: "$";
+    font-size: 4rem;
+    margin-top: 0.2rem;
+    margin-right: 1rem;
+  }
+
+  &__text-field {
+    display: flex;
+    justify-content: center;
+    line-height: 1.5;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  &__btn {
+    align-self: flex-end;
+    display: flex;
+    justify-content: center;
+    padding-top: 1.2rem;
+    width: 100%;
+    height: 4.4rem;
+    border-radius: 0.6rem;
+    background: $lg-1 linear-gradient(90deg, $lg-1, $lg-2);
+    font-size: 1.3rem;
+    letter-spacing: 0.14rem;
+    text-transform: uppercase;
+    line-height: 1.6;
+    color: $white;
+    transition: color $tr-x1, background-color $tr-x1, box-shadow $tr-x1;
+  }
+
+  &__btn:hover {
+    box-shadow: inset 0 0 0px 1px $grayish-blue;
+    background: none;
+    background-color: $white;
+    color: $lg-2;
+  }
+
+  &__btn:focus-visible {
+    outline: 2px dashed hsl(271.3, 68.5%, 32.4%);
+    outline-offset: 3px;
+  }
+}
+
+#toggle-state-1:checked ~ .cards-container > .card .card__details > #price-month,
+#toggle-state-2:checked ~ .cards-container > .card .card__details > #price-year {
+  display: flex;
+}
+
+.btn_central {
+  background: $white;
+  color: $lg-2;
+}
+
+.btn_central:hover {
+  box-shadow: inset 0 0 0px 1px $white;
+  background-color: $lg-2;
+  color: $white;
+}
+
+.btn_central:focus-visible {
+  outline: 2px dashed $white;
+}
+
+.card:nth-child(2n) {
+  color: var(--price-color);
+  --border-color: hsl(236, 72%, 79%);
+  --price-color: hsl(240, 78%, 98%);
 }
 
 .card:first-child {
   z-index: 0;
   background: $white;
+  --border-color: #dbdbdb;
 
   @include screen("desktop") {
     grid-row: 2 / 3;
@@ -117,27 +214,16 @@
 }
 
 .card:last-child {
-  z-index: 1;
   background: $white;
+  --border-color: #dbdbdb;
 
   @include screen("desktop") {
+    z-index: 0;
     grid-row: 2 / 3;
     grid-column: 3 / 4;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
   }
-}
-
-.btn {
-  display: flex;
-  justify-content: center;
-  padding-top: 1.2rem;
-  width: 100%;
-  height: 4.4rem;
-  background-color: $white;
-  color: $lg-2;
-  border-radius: 0.5rem;
-  border: 1px solid lightcoral;
 }
 
 .attribution {
@@ -163,7 +249,7 @@
   }
 
   a:focus-visible {
-    outline: 2px dotted hsl(271.3, 68.5%, 32.4%);
+    outline: 2px dashed hsl(271.3, 68.5%, 32.4%);
     outline-offset: 3px;
   }
 }
