@@ -6,59 +6,75 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frontend Mentor | Pricing component with toggle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <main>
-      <h1>Our Pricing</h1>
-      <fieldset role="radiogroup">
+    <div class="main-container">
+      <div class="main-bg"></div>
+
+      <main class="main">
+        <h1 class="main__heading">Our Pricing</h1>
         <input type="radio" id="toggle-state-1" name="price-toggle" />
         <input type="radio" id="toggle-state-2" name="price-toggle" checked />
-        <label for="toggle-state-1">Annually</label>
-        <label for="toggle-state-2">Monthly</label>
-      </fieldset>
-      <dl>
-        <div class="card">
-          <dt>Basic</dt>
-          <dd>
-            <span>&dollar;19.99 &dollar;199.99</span>
-            <span>500 GB Storage</span>
-            <span>2 Users Allowed</span>
-            <span>Send up to 3 GB</span>
-            <a href="#">Learn More</a>
-          </dd>
+        <fieldset class="toggle">
+          <div class="toggle-bg">
+            <div class="toggle-handle"></div>
+          </div>
+          <label class="toggle__label" for="toggle-state-1" id="toggle-state-1-label">
+            Annually
+          </label>
+          <label class="toggle__label" for="toggle-state-2" id="toggle-state-2-label">
+            Monthly
+          </label>
+        </fieldset>
+        <dl class="cards-container">
+          <div class="card">
+            <dt class="card-title">Basic</dt>
+            <dd>
+              <span>&dollar;19.99 &dollar;199.99</span>
+              <span>500 GB Storage</span>
+              <span>2 Users Allowed</span>
+              <span>Send up to 3 GB</span>
+              <a class="btn" href="#">Learn More</a>
+            </dd>
+          </div>
+          <div class="card">
+            <dt>Professional</dt>
+            <dd>
+              <span>&dollar;24.99 &dollar;249.99</span>
+              <span>1 TB Storage</span>
+              <span>5 Users Allowed</span>
+              <span>Send up to 10 GB</span>
+              <a class="btn" href="#">Learn More</a>
+            </dd>
+          </div>
+          <div class="card">
+            <dt>Master</dt>
+            <dd>
+              <span>&dollar;39.99 &dollar;399.99</span>
+              <span>2 TB Storage</span>
+              <span>10 Users Allowed</span>
+              <span>Send up to 20 GB</span>
+              <a class="btn" href="#">Learn More</a>
+            </dd>
+          </div>
+        </dl>
+        <div class="attribution">
+          <a
+            href="https://www.frontendmentor.io/challenges/pricing-component-with-toggle-8vPwRMIC"
+          >
+            Challenge page
+          </a>
+          <a href="https://github.com/khoncharov">My Github</a>
         </div>
-        <div class="card">
-          <dt>Professional</dt>
-          <dd>
-            <span>&dollar;24.99 &dollar;249.99</span>
-            <span>1 TB Storage</span>
-            <span>5 Users Allowed</span>
-            <span>Send up to 10 GB</span>
-            <a href="#">Learn More</a>
-          </dd>
-        </div>
-        <div class="card">
-          <dt>Master</dt>
-          <dd>
-            <span>&dollar;39.99 &dollar;399.99</span>
-            <span>2 TB Storage</span>
-            <span>10 Users Allowed</span>
-            <span>Send up to 20 GB</span>
-            <a href="#">Learn More</a>
-          </dd>
-        </div>
-      </dl>
-    </main>
-    <footer>
-      <div class="attribution">
-        <a
-          href="https://www.frontendmentor.io/challenges/pricing-component-with-toggle-8vPwRMIC"
-        >
-          Challenge page
-        </a>
-        <a href="https://github.com/khoncharov">My Github</a>.
-      </div>
-    </footer>
+      </main>
+    </div>
+
     <script type="module" src="./src/main.ts"></script>
   </body>
 </html>
