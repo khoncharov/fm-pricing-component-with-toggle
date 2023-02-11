@@ -178,8 +178,8 @@
   }
 }
 
-#toggle-state-1:checked ~ .cards-container > .card .card__details > #price-month,
-#toggle-state-2:checked ~ .cards-container > .card .card__details > #price-year {
+#toggle-state-2:checked ~ .cards-container > .card .card__details > .month,
+#toggle-state-1:checked ~ .cards-container > .card .card__details > .year {
   display: flex;
 }
 
