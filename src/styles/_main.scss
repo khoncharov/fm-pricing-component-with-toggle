@@ -20,7 +20,7 @@
 .main-bg::before {
   content: "";
   position: absolute;
-  background-image: url("./images/bg-top.svg");
+  background-image: url("/images/bg-top.svg");
   background-repeat: no-repeat;
   background-position: 20.4rem -3.5rem;
   width: 37.5rem;
@@ -41,7 +41,7 @@
   @include screen("desktop") {
     content: "";
     position: absolute;
-    background-image: url("./images/bg-bottom.svg");
+    background-image: url("/images/bg-bottom.svg");
     background-repeat: no-repeat;
     width: 35.3rem;
     height: 30.4rem;
